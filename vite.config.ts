@@ -56,7 +56,7 @@ const produceSingleFile = process.env.SINGLE_FILE === 'true'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react(), 
+    react(),
     tailwindcss(), 
     figmaAssetsResolver(), 
     removeVersionSpecifiers(), 
