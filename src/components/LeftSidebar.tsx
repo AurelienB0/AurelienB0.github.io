@@ -13,9 +13,11 @@ interface SectionConfig {
 const sectionSubsections: SectionConfig = {
   '/controverse': [
     { id: 'intro', title: 'Introduction' },
-    { id: 'explication', title: 'Utilisation et enjeux' },
-    { id: 'technologie', title: 'Technologie' },
-    { id: 'limites', title: 'Limites des CBDC' }
+    { id: 'transition', title: 'Une société déjà en transition' },
+    { id: 'promesses', title: 'Les promesses' },
+    { id: 'risques', title: 'Risques et dérives' },
+    { id: 'controverse', title: 'La controverse' },
+    { id: 'conclusion', title: 'Conclusion' }
   ],
   '/expert': [
     { id: 'interview', title: 'Interview de l\'expert' },

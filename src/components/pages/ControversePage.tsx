@@ -1,6 +1,10 @@
+import React from "react";
+import arg from "../../styles/btc.jpg";
+import btc from "../../styles/argent.png";
 export function ControversePage() {
   return (
     <div className="space-y-20">
+      {/* INTRODUCTION */}
       <section id="intro" className="scroll-mt-48">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
@@ -8,64 +12,241 @@ export function ControversePage() {
         </div>
         <div className="space-y-5 text-foreground/80 leading-relaxed p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
           <p>
-            Aujourd'hui, l'émergence des monnaies numériques de banque centrale, ou Central Bank Digital Currency (CBDC), représente un enjeu sociétal et économique majeur. De nombreuses institutions financières, mais aussi des citoyens, s'interrogent sur les implications de ces nouveaux moyens de transaction. Cette proposition résoudrait des problèmes complexes, en permettant un contrôle plus strict des flux monétaire pour combattre efficacement le crime organisé et ses diverses formes de blanchiment d'argent, mais elle soulève des questions au sujet des impacts sur les libertés individuelles qu'une telle mesure pourrait engendrer. Cette technologie risquerait également de perturber la stabilité financière et la souveraineté monétaire du pays qui l'adopte. Avec un changement trop rapide ou mal encadré, les conséquences sur la confiance des citoyens et l'équilibre économique pourraient être négatives.
+            Depuis plusieurs décennies, les nouvelles technologies transforment
+            profondément notre rapport à l’argent. Les paiements par carte
+            bancaire, sans contact, par téléphone mobile ou par QR code sont
+            devenus courants dans de nombreux pays. Dans certains États comme la
+            Suède ou la Chine, l’argent liquide est aujourd’hui très peu
+            utilisé, voire refusé dans certains lieux. Cette évolution montre
+            que la société sans espèces n’est plus une simple hypothèse, mais
+            une réalité en construction.
           </p>
           <p>
-            Notre analyse portera sur les enjeux derrière la potentielle adoption d'une monnaie virtuelle, ainsi que les potentielles dérives qui pourraient suivre ce changement. Nous évoquerons également la technologie sous-jacente des CBDC et une chronologie des événements et découvertes importantes ayant façonné le débat. Enfin, nous présenterons ce que nous avons appris suite à un échange avec un expert du domaine : Sergio FOCARDI
-          </p>
-        </div>
-      </section>
-
-      <section id="explication" className="scroll-mt-48">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
-          <h2 className="pb-0 text-indigo-700">Utilisation et enjeux</h2>
-        </div>
-        <div className="space-y-5 text-foreground/80 leading-relaxed p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-          <p>
-            La Central Bank Digital Currency (CBDC) peut être définie comme une forme électronique de monnaie de banque centrale. Contrairement aux cryptomonnaies, la CBDC est reconnue par l'Etat qui garantit sa valeur et est destinée à servir de substitut à la monnaie physique.
-          </p>
-          <p>
-            Les cas d'utilisation envisagés sont multiples. Ils permettent, par exemple, aux autorités d'avoir un contrôle plus marqué des échanges monétaires et de disposer d'outils plus efficaces pour lutter contre le blanchiment d'argent, les détournement de fonds et la corruption. En effet, il est très facile aujourd'hui aux organisations criminelles et aux groupes terroristes de disposer de financements. Ces fonds proviennent majoritairement du crime organisé et sont blanchis grâce à l'existence de l'argent liquide, intraçable et permettant à des économies parallèles de se former. Selon les défenseurs des CBDC : le déploiement à grande échelle d'une telle technologie réduirait à grande échelle l'impact des groupes criminels.
-          </p>
-          <p>
-            Ensuite, les CBDC permettent aux citoyens souhaitant acquérir une monnaie virtuelle de disposer d'une monnaie souveraine, assuré par l'État, plutôt que se tourner vers les initiatives privées telles que Libra, la cryptomonnaie de Meta. Ces projets portés par des géant du numérique gagnent en effet en popularité et l'apparition d'une CBDC représenterait une alternative plus transparente et sécurisée aux détenteurs de monnaie virtuelle.
+            Dans ce contexte, l’apparition des monnaies numériques de banque
+            centrale, appelées CBDC (Central Bank Digital Currency), marque une
+            nouvelle étape dans la dématérialisation de la monnaie. Ces
+            innovations soulèvent cependant de nombreuses interrogations. Si
+            elles promettent plus d’efficacité et de sécurité, elles font aussi
+            craindre une surveillance accrue et une perte de libertés
+            individuelles. Dès lors, une question centrale se pose : la
+            transition vers une société sans espèces représente-t-elle une
+            avancée bénéfique pour la société ou un risque majeur pour les
+            libertés et l’équilibre économique ?
           </p>
         </div>
       </section>
 
-      <section id="technologie" className="scroll-mt-48">
+      {/* I. TRANSITION */}
+      <section id="transition" className="scroll-mt-48">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
-          <h2 className="pb-0 text-indigo-700">Technologie</h2>
+          <h2 className="pb-0 text-indigo-700">
+            I. Une transition déjà en cours vers une société sans espèces
+          </h2>
         </div>
         <div className="space-y-5 text-foreground/80 leading-relaxed p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
           <p>
-            D'un point de vue technologique, la CBDC se doit de répondre à de nombreuses problématiques. Elle nécessite donc d'être une technologie transparente, assurant la sécurité des échanges, et peut être mise en œuvre par le biais d'une blockchain. L'objectif premier est pouvoir retracer chaque transaction pour garantir l'intégrité de la monnaie et la validité des échanges. Ces promesses reposent sur la cryptographie, un domaine des mathématiques permettant de masquer et sécuriser des informations, en garantissant que seuls les détenteurs de certaines clés puissent accéder aux messages.
+            La disparition progressive de l’argent liquide ne date pas d’hier.
+            Dès la fin du XXᵉ siècle, les virements bancaires et les cartes de
+            paiement ont amorcé la numérisation des transactions. Au début du
+            XXIᵉ siècle, cette évolution s’est accélérée avec l’essor
+            d’Internet, des smartphones et des plateformes de paiement
+            numérique.
+          </p>
+
+          {/* Visualizing the historical evolution mentioned in your text */}
+          <div className="my-8 flex justify-center">
+            <img src={btc} />
+            {/* https://theconversation.com/le-cash-recule-mais-reste-solidement-ancre-dans-les-portefeuilles-des-francais-268917 */}
+          </div>
+
+          <p>
+            Des événements marquants ont renforcé cette dynamique. En 2008, la
+            création du Bitcoin a introduit l’idée d’une monnaie entièrement
+            numérique et indépendante des États. Même si cette cryptomonnaie
+            reste marginale pour les paiements quotidiens, elle a profondément
+            influencé la réflexion mondiale sur l’avenir de la monnaie. En 2016,
+            la démonétisation soudaine en Inde a accéléré l’adoption massive des
+            paiements numériques, montrant comment des décisions politiques
+            peuvent transformer rapidement les usages.
           </p>
           <p>
-            Ces derniers sont encryptés via des algorithmes de chiffrement (SHA-256) et sont transformés en une empreinte numérique unique de taille fixe (le hash). Même un changement infime dans la transaction produit un hash complètement différent. Le hash peut être lu uniquement si l'on peut prouver mathématiquement qu'on est le destinataire de la transaction par le biais d'une "clé privée" gardée secrète. Ce dispositif est très robuste et sécurisé tant la puissance de calcul nécessaire pour "brute force" (trouver une clé par hasard) est démentielle. Le registre des opérations est partagé par tout monde, garantissant ainsi l'intégrité du système.
+            Aujourd’hui, cette transition s’observe à l’échelle mondiale. En
+            Chine, les paiements par applications mobiles dominent largement les
+            transactions quotidiennes. En Europe, les paiements sans contact
+            progressent rapidement. Cette évolution conduit les banques
+            centrales à développer leurs propres monnaies numériques afin de
+            conserver leur rôle central dans le système monétaire. C’est dans ce
+            cadre que s’inscrivent les projets de CBDC.
           </p>
         </div>
       </section>
 
-      <section id="limites" className="scroll-mt-48">
+      {/* II. PROMESSES (UTOPIE) */}
+      <section id="promesses" className="scroll-mt-48">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
-          <h2 className="pb-0 text-indigo-700">Limites des CBDC</h2>
+          <h2 className="pb-0 text-indigo-700">
+            II. Les promesses d’une société sans espèces : une vision utopique
+          </h2>
         </div>
         <div className="space-y-5 text-foreground/80 leading-relaxed p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
           <p>
-            Néanmoins, les qualités des CBDC sont également leur plus grand défaut. En effet, c'est la question de la traçabilité qui est au cœur des inquiétudes : l'utilisation du numérique permettrait de réduire les coûts opérationnels pour les institutions, mais pourrait être détournée par les gouvernements ou des groupes mal intentionnés à des fins de surveillance. L'adoption universelle d'une monnaie virtuelle utilisant une blockchain serait encore plus risquée, car le registre des transactions serait décentralisé et par conséquent, lisible par tous les utilisateurs et immuable pour les gouvernements.
+            Les défenseurs de la société sans espèces mettent en avant de
+            nombreux avantages. Tout d’abord, les paiements numériques offrent
+            une rapidité et une simplicité d’utilisation incomparables. Les
+            transactions sont instantanées, disponibles à toute heure, et ne
+            nécessitent plus de transport ni de gestion de monnaie physique.
           </p>
           <p>
-            Il serait ainsi possible pour n'importe qui de retracer chaque transaction associée à certaine clé d'identification (clé publique), qui une fois liée à son/sa propriétaire, révélerait l'historique complet de ses dépenses de par la nature de la blockchain. Cette dernière empêcherait également la modification des registres, et donc le gel des fonds de compte provenant de criminels avérés. Or, le système actuel repose sur le contrôle des banques centrales, en injectant des liquidités dans l'économie pour faire baisser les taux d'intérêt en tant de crise par exemple.
+            Ensuite, la disparition de l’argent liquide pourrait contribuer à
+            réduire la fraude, la corruption et le blanchiment d’argent.
+            Contrairement au cash, les transactions numériques peuvent être
+            tracées. Les banques centrales et les autorités publiques disposent
+            ainsi d’outils plus efficaces pour détecter les flux financiers
+            illégaux. Les études menées sur les CBDC, notamment en Chine,
+            montrent que ces technologies peuvent améliorer significativement la
+            lutte contre la criminalité financière.
           </p>
           <p>
-            De plus, à chaque fois qu'un nouveau système est mis en place, de nouvelles failles de sécurité peuvent apparaître, ce qui remettrait en cause la stabilité financière qui est l'une des justifications principales de ce projet. Il est donc évident qu'afin de déployer une CBDC, les gouvernements se tourneraient vers un registre centralisé, ou utiliseraient une implémentation différente des cryptomonnaies actuelles pour garantir la mainmise sur les échanges.
+            Par ailleurs, les CBDC offrent une alternative publique et
+            souveraine aux monnaies numériques privées développées par les
+            grandes entreprises technologiques. Face à des projets comme Libra
+            (Meta), les banques centrales cherchent à garantir une monnaie
+            numérique stable, régulée et reconnue par l’État. Cela permettrait
+            de préserver la souveraineté monétaire et d’éviter que le contrôle
+            de la monnaie ne soit confié à des acteurs privés.
           </p>
           <p>
-            L'instauration d'une CBDC, si elle n'est pas protégée par des institutions indépendantes, pourrait alors engendrer une régression des libertés individuelles. Le cœur de la controverse réside dans le niveau de surveillance que cette technologie confère à l'État. Contrairement à l'argent liquide, le caractère numérique de la CBDC permettrait, techniquement, une surveillance sans limite.
+            Enfin, une société sans espèces pourrait favoriser l’inclusion
+            financière, notamment dans les régions où l’accès aux banques
+            traditionnelles est limité. Grâce aux téléphones mobiles, certaines
+            populations peuvent accéder à des services financiers de base sans
+            disposer d’un compte bancaire classique.
+          </p>
+        </div>
+      </section>
+
+      {/* III. RISQUES (DYSTOPIE) */}
+      <section id="risques" className="scroll-mt-48">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
+          <h2 className="pb-0 text-indigo-700">
+            III. Les risques et dérives possibles : une vision dystopique
+          </h2>
+        </div>
+        <div className="space-y-5 text-foreground/80 leading-relaxed p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+          <p>
+            Cependant, cette transition soulève de nombreuses inquiétudes. Le
+            principal risque concerne la surveillance des citoyens.
+            Contrairement à l’argent liquide, les paiements numériques laissent
+            des traces. Une généralisation des CBDC pourrait permettre aux États
+            de suivre précisément les dépenses individuelles. Sans garanties
+            solides, cela représenterait une atteinte majeure à la vie privée et
+            aux libertés fondamentales.
+          </p>
+          <p>
+            Un autre problème majeur est celui de l’exclusion numérique. Toutes
+            les populations ne disposent pas des compétences, des équipements ou
+            de l’accès à Internet nécessaires pour utiliser des moyens de
+            paiement numériques. Les personnes âgées, les populations rurales ou
+            précaires risquent d’être marginalisées dans une société entièrement
+            dématérialisée.
+          </p>
+          <p>
+            Sur le plan économique, la mise en place d’une CBDC peut également
+            fragiliser le système bancaire. Si les citoyens placent directement
+            leur argent auprès de la banque centrale, les banques commerciales
+            pourraient perdre leur rôle d’intermédiaire, ce qui augmenterait le
+            risque de crises financières, notamment en cas de retraits massifs
+            et instantanés.
+          </p>
+          <p>
+            Aussi, les systèmes numériques ne sont pas exempts de risques
+            technologiques. Les cyberattaques, les pannes informatiques ou les
+            failles de sécurité pourraient paralyser une économie entièrement
+            dépendante du numérique. Les expériences menées dans certains pays
+            montrent que la technologie seule ne suffit pas à garantir la
+            stabilité et la confiance des citoyens.
+          </p>
+          <p>
+            Enfin, la transition numérique pose un défi environnemental souvent
+            sous-estimé. Si la fin des espèces supprime la pollution liée au
+            transport de fonds et à la fabrication des pièces et billets, elle
+            la remplace par une consommation énergétique croissante liée aux
+            infrastructures numériques (data centers, réseaux). L'impact est
+            particulièrement critique concernant certaines technologies de
+            cryptomonnaies comme le Bitcoin, dont la "surconsommation
+            d’électricité" est pointée du doigt.
+          </p>
+
+          {/* Visualizing the energy impact argument */}
+          <div className="my-8 flex justify-center">
+            <img src={arg} />
+            {/* https://www.jbs.cam.ac.uk/2022/a-deep-dive-into-bitcoins-environmental-impact/ */}
+          </div>
+
+          <p>
+            Le déploiement massif de ces technologies énergivores, nécessaires
+            au fonctionnement d'une société entièrement dématérialisée, pourrait
+            entrer en contradiction avec les objectifs climatiques actuels.
+          </p>
+        </div>
+      </section>
+
+      {/* IV. CONTROVERSE */}
+      <section id="controverse" className="scroll-mt-48">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
+          <h2 className="pb-0 text-indigo-700">
+            IV. Une controverse au cœur des choix de société
+          </h2>
+        </div>
+        <div className="space-y-5 text-foreground/80 leading-relaxed p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+          <p>
+            La controverse autour de la société sans espèces ne repose donc pas
+            sur une opposition simple entre progrès et refus du changement. Elle
+            reflète un dilemme plus profond entre efficacité économique et
+            protection des libertés individuelles. Les CBDC et les paiements
+            numériques offrent des opportunités réelles, mais ils exigent un
+            encadrement juridique, technique et démocratique très strict.
+          </p>
+          <p>
+            Les exemples internationaux montrent que la transition ne peut pas
+            être uniforme. Certains pays avancent rapidement, tandis que
+            d’autres choisissent la prudence. De nombreuses institutions, comme
+            la Banque centrale européenne, rappellent d’ailleurs que l’argent
+            liquide doit rester disponible comme solution de secours, notamment
+            en période de crise.
+          </p>
+        </div>
+      </section>
+
+      {/* CONCLUSION */}
+      <section id="conclusion" className="scroll-mt-48">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
+          <h2 className="pb-0 text-indigo-700">
+            Conclusion : utopie ou dystopie ?
+          </h2>
+        </div>
+        <div className="space-y-5 text-foreground/80 leading-relaxed p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+          <p>
+            La société sans espèces n’est ni totalement une utopie ni
+            entièrement une dystopie. Elle représente avant tout un choix de
+            société. Si elle est mise en œuvre de manière progressive, encadrée
+            et respectueuse des libertés individuelles, elle peut améliorer
+            l’efficacité économique et renforcer la sécurité des transactions.
+            En revanche, une transition rapide et mal contrôlée pourrait
+            entraîner une surveillance excessive, une exclusion sociale accrue
+            et une fragilisation du système financier.
+          </p>
+          <p>
+            Ainsi, la véritable question n’est pas de savoir si la société sans
+            espèces va émerger, mais comment elle sera construite, par qui, et
+            dans l’intérêt de quels acteurs. C’est sur ces choix politiques,
+            économiques et éthiques que repose l’avenir de la monnaie dans nos
+            sociétés.
           </p>
         </div>
       </section>
