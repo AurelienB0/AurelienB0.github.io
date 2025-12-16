@@ -1,152 +1,226 @@
+import React from "react";
+import img1 from "../../styles/1.png";
+import img2 from "../../styles/2.png";
+import img3 from "../../styles/3.png";
+import img4 from "../../styles/4.png";
+
+// --- DATA CONFIGURATION ---
+const ACTORS_DATA = [
+  {
+    name: "Banques Centrales (BCE, PBOC...)",
+    type: "Institutionnel",
+    position: "Favorable (mais prudent) / Inquiètes",
+    sentiment: "mixed", // used for color: positive, negative, mixed, neutral
+    content:
+      "Elles cherchent à émettre une MDBC pour préserver la souveraineté monétaire face aux crypto-actifs privés. Elles voient le numérique comme un moyen de réduire les coûts de gestion du cash et de lutter contre le blanchiment. Cependant, l'émergence de la monnaie électronique réduit leur capacité à contrôler l'offre de monnaie et les revenus de \"seigneuriage\".",
+    source: "Sebti, Qin, Fabris",
+  },
+  {
+    name: "Le Public / Consommateurs",
+    type: "Société Civile",
+    position: "Polarisé / Divisé",
+    sentiment: "mixed",
+    content:
+      'Une fracture se creuse entre les "pro-cashless" et les "pro-cash". En Europe, le COVID-19 a agi comme un catalyseur pour le sans-contact. En Inde, les jeunes et les citadins adoptent massivement le mobile, tandis que les ruraux et les personnes âgées sont exclus.',
+    source: "Kotkowski, Kumari",
+  },
+  {
+    name: "Populations Rurales & Âgées",
+    type: "Groupe Vulnérable",
+    position: "Défavorable / Exclu",
+    sentiment: "negative",
+    content:
+      "Victimes de la fracture numérique (\"Digital Illiteracy\"). L'absence d'infrastructure (internet) et le manque de connaissances rendent la société sans espèces difficilement réalisable pour eux, créant un risque d'inégalité financière accrue.",
+    source: "Kumari",
+  },
+  {
+    name: "Gouvernements (ex: Inde)",
+    type: "Politique",
+    position: "Très Favorable / Ambivalent",
+    sentiment: "positive",
+    content:
+      "Ils poussent vers le cashless pour la transparence, l'efficacité économique et les recettes fiscales (réduction du travail au noir). Cependant, ils doivent garantir que le cash fonctionne en cas de catastrophe (panne électrique, ouragan).",
+    source: "Kumari, Fabris",
+  },
+  {
+    name: "Fintechs & Géants du Web",
+    type: "Entreprise Privée",
+    position: "Disruptives",
+    sentiment: "positive",
+    content:
+      'Elles "brisent" le monopole bancaire, réduisent les coûts de transaction et augmentent la vitesse des paiements. En Chine, des plateformes comme Taobao ont explosé, normalisant le paiement numérique.',
+    source: "Hadad, Qin",
+  },
+  {
+    name: "Crypto-actifs (Bitcoin, etc.)",
+    type: "Technologie / Financier",
+    position: "Alternative / Menace",
+    sentiment: "neutral",
+    content:
+      "Concurrents de la monnaie d'État. Ils sont vus comme instables et risqués par les banques centrales, mais leur existence force les États à innover pour ne pas devenir obsolètes. Ils posent des défis éthiques et économiques.",
+    source: "Sebti",
+  },
+  {
+    name: "Système Bancaire Commercial",
+    type: "Économique",
+    position: "En transformation",
+    sentiment: "mixed",
+    content:
+      "Le passage au numérique est vital pour elles (réduction des coûts, IA). Elles craignent cependant la volatilité des dépôts face à une éventuelle monnaie de banque centrale numérique.",
+    source: "Kumari; Sebti",
+  },
+  {
+    name: "Utilisateur du Cash",
+    type: "Concept / Objet",
+    position: "Résistant",
+    sentiment: "neutral",
+    content:
+      "Le cash refuse de mourir. Paradoxalement, le volume de billets en circulation augmente (Zone Euro +6.4%/an). Il reste le seul moyen de paiement garantissant l'anonymat et fonctionnant sans électricité.",
+    source: "Hadad, Fabris",
+  },
+  {
+    name: "Cybercriminels",
+    type: "Criminel",
+    position: "Opportunistes",
+    sentiment: "negative",
+    content:
+      "Le passage au numérique supprime les braquages physiques mais fait exploser la cybercriminalité (vol d'identité, hacking).",
+    source: "Fabris",
+  },
+];
+
+// Helper to get colors based on sentiment
+const getSentimentColor = (sentiment: string) => {
+  switch (sentiment) {
+    case "positive":
+      return "bg-green-100 text-green-800 border-green-200";
+    case "negative":
+      return "bg-red-100 text-red-800 border-red-200";
+    case "mixed":
+      return "bg-orange-100 text-orange-800 border-orange-200";
+    default:
+      return "bg-gray-100 text-gray-800 border-gray-200";
+  }
+};
+
 export function ExpertPage() {
   return (
-    <div className="space-y-20">
+    <div className="space-y-20 max-w-5xl mx-auto px-4 py-8">
+      {/* SECTION 1: INTERVIEW */}
       <section id="interview" className="scroll-mt-48">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
-          <h2 className="pb-0 text-indigo-700">Interview de l'expert</h2>
+          <h2 className="text-2xl font-bold text-indigo-700 m-0">
+            Interview de l'expert
+          </h2>
         </div>
-        <div className="space-y-5 text-foreground/80 leading-relaxed">
-          <div className="bg-indigo-600 rounded-lg p-6 border-l-4 border-indigo-800 shadow-md">
-            <p className="italic text-white">Expert : Sergio FOCARDI</p>
+        <div className="space-y-5 text-gray-700 leading-relaxed">
+          <div
+            className="rounded-lg p-6 border-l-4 border-indigo-800 shadow-md"
+            style={{ backgroundColor: "#f2a053ff" }}
+          >
+            <p className="italic text-white font-medium text-lg">
+              Expert : Sergio FOCARDI
+            </p>
           </div>
           <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
             <p>
-              Sergio Focardi est un expert reconnu dans le domaine des monnaies numériques et de la finance. Son analyse approfondie des CBDC nous a permis de mieux comprendre les enjeux techniques et sociétaux de cette technologie émergente.
+              Sergio Focardi est un expert reconnu dans le domaine des monnaies
+              numériques et de la finance. Son analyse approfondie des CBDC nous
+              a permis de mieux comprendre les enjeux techniques et sociétaux de
+              cette technologie émergente.
             </p>
           </div>
         </div>
       </section>
 
+      {/* SECTION 2: FRISE */}
       <section id="frise" className="scroll-mt-48">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
-          <h2 className="pb-0 text-indigo-700">Frise chronologique</h2>
+          <h2 className="text-2xl font-bold text-indigo-700 m-0">
+            Frise chronologique
+          </h2>
         </div>
-        <div className="space-y-6">
-          <div className="bg-gray-50 rounded-lg p-12 min-h-[400px] flex items-center justify-center border-2 border-dashed border-gray-300 shadow-sm">
-            <p className="text-gray-600 text-center">
-              Espace réservé pour la frise chronologique<br />
-              (Images à insérer manuellement)
-            </p>
-          </div>
+        <div className="grid grid-cols-1 gap-6">
+          <img
+            src={img1}
+            alt="Timeline 1"
+            className="w-full rounded shadow-sm"
+          />
+          <img
+            src={img2}
+            alt="Timeline 2"
+            className="w-full rounded shadow-sm"
+          />
+          <img
+            src={img3}
+            alt="Timeline 3"
+            className="w-full rounded shadow-sm"
+          />
+          <img
+            src={img4}
+            alt="Timeline 4"
+            className="w-full rounded shadow-sm"
+          />
         </div>
       </section>
 
+      {/* SECTION 3: ACTEURS (UPDATED) */}
       <section id="acteurs" className="scroll-mt-48">
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-8">
           <div className="w-1.5 h-10 bg-indigo-600 rounded-full" />
-          <h2 className="pb-0 text-indigo-700">Identification d'experts et acteurs</h2>
+          <h2 className="text-2xl font-bold text-indigo-700 m-0">
+            Identification des Acteurs & Positions
+          </h2>
         </div>
-        
-        <div className="space-y-8">
-          <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-            <h3 className="mb-4 text-indigo-700">Krach du bitcoin</h3>
-            <div className="space-y-4 text-foreground/80">
-              <p>
-                <strong>2021 :</strong> -20% dogecoin, -19% ethereum, -22% definity, -8,5% bitcoin
-              </p>
-              <p>
-                <strong>Elon Musk :</strong> « Une cryptomonnaie est une bonne idée à plusieurs niveaux et nous croyons en ce futur prometteur mais cela ne doit pas se faire avec un coût élevé pour l'environnement » (Donald Trump pro-bitcoin)
-              </p>
-              <p>
-                <strong>La Chine lance yuan numérique :</strong> « les monnaies virtuelles ne devraient pas et ne peuvent pas être utilisées sur le marché parce qu'elles ne sont pas des monnaies réelles » → Interdiction des cryptos monnaies aux institutions financières.
-              </p>
-              <p>
-                <strong>Éthique des crypto monnaies :</strong> associées à aucune autorité ou institution gouvernementale. Algorithme de suivi des transactions (Distributed ledger technology). Activités illégales → 46% des transactions bitcoin entre 2009 et 2017. Rançongiciels (ransomware) = 25 millions de $ entre 2015 et 2016.
-              </p>
-              <p>
-                Consommation énergétique ~50 et 120 TWh par an (plus que Kazakhstan), notamment 300 000 fois plus que le système de paiement électronique Visa.
-              </p>
-            </div>
-          </div>
 
-          <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-            <h3 className="mb-4 text-indigo-700">L'identification, la quatrième fonction de la monnaie</h3>
-            <div className="space-y-4 text-foreground/80">
-              <p>
-                La monnaie → étalon des valeurs, intermédiaire des échanges et réserve de valeur. Elle insère l'usager dans une communauté politique, sociale et éthique et l'y identifie. (Chez les grecs déjà)
-              </p>
-              <p>
-                L'anonymat est relatif (au percepteur, banquier pour les billets...etc) (au commerçant pour la carte de paiement)
-              </p>
-              <p>
-                L'état identifie les individus et, à notre époque, émet aussi la monnaie, tout cela encadré par la loi.
-              </p>
-              <p>
-                On a du coup l'essor de monnaies virtuelles, soient avec leurs propres modalités d'identification, de réserve de valeur + étalon de valeur (échange monnaie virtuelle en réelle) soit avec les cryptomonnaies avec blockchain (Distributed ledger technology) avec une autre modalité d'identification.
-              </p>
-              <p>
-                Laisser la monnaie aux privées n'est pas toujours une bonne idée, même si la gestion de la monnaie par les États a aussi donnée des catastrophes, (hyperinflation Papiermark 1923) + identification par un privé non durable dans le temps et l'espace
-              </p>
-              <p>
-                → D'où l'idée de CBDC (Europe, Asie), pour garder une identité définie
-              </p>
-            </div>
-          </div>
+        {/* Grid Layout for Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+          {ACTORS_DATA.map((actor, index) => (
+            <div
+              key={index}
+              className="flex flex-col h-full bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
+            >
+              {/* Card Header */}
+              <div className="p-5 border-b border-gray-100 bg-gray-50/50">
+                <div className="flex justify-between items-start gap-4 mb-2">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                    {actor.type}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 leading-tight">
+                  {actor.name}
+                </h3>
+              </div>
 
-          <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-            <h3 className="mb-4 text-indigo-700">COVID-19 pandemic increases the divide between cash and cashless payment users in Europe</h3>
-            <div className="space-y-4 text-foreground/80">
-              <p>
-                La covid-19 a été un facteur d'accélération de l'adoption des paiements sans espèces. Notamment en Suisse, Italy et France (malgré une baisse de conso) dues aux restrictions gouvernementales. 47,9% se sont tournées vers plus de cartes, 45,4% n'ont rien changé.
-              </p>
-              <p>
-                47.9% → Facteurs extérieurs comme le développement de l'infrastructure/ couverture technologique des 12 mois précédents.
-              </p>
-            </div>
-          </div>
+              {/* Card Body */}
+              <div className="p-5 flex-grow">
+                {/* Position Badge */}
+                <div
+                  className={`inline-block px-3 py-1 rounded-md text-sm font-medium mb-4 border ${getSentimentColor(
+                    actor.sentiment
+                  )}`}
+                >
+                  Position : {actor.position}
+                </div>
 
-          <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-            <h3 className="mb-4 text-indigo-700">Money laundering in a CBDC world: a game of cats and mice</h3>
-            <div className="space-y-4 text-foreground/80">
-              <p>
-                En 2020, 70% des BC avaient des intentions de CBDC, 86% étaient dans une étape de développement et 60% en expérimentation/définition fonctionnelle et logique
-              </p>
-              <p>
-                Une CBDC, c'est une monnaie virtuelle de détail/un jeton basé et émis par une Banque Centrale, qui garantit sa stabilité, sa légalité, réduit les coûts d'opérations, lutte à la criminalité...etc.
-              </p>
-              <p>
-                À l'heure actuelle, on en sait peu sur leur capacités à lutter contre le blanchiment d'argent.
-              </p>
-              <p>
-                Les classifications de la monnaie : technologie (comptes bancaires ou jetons), accessibilité (répandue ou restreinte), forme (virtuelle, réelle), contrôle/émetteur (banque centrale ou privé)
-              </p>
-              <p>
-                Les monnaies numériques interbancaires, de détail et token de banques centrales sont les 3 considérées ici. + comptes auprès des banques centrales pour entités bancaires
-              </p>
-              <p>
-                Les monnaies par token sont vulnérables à la falsification des jetons
-              </p>
-              <p>
-                Avec une CBDC interbancaire → ne lutte pas contre la fraude. Cependant, avec des comptes auprès de la banque centrale et une monnaie de détail → exemple de la Chine, forte lutte contre la fraude.
-              </p>
-              <p>
-                Toutes les transactions sont communiquées à la banque centrale populaire et pour les 6% en cash, carte de jetons
-              </p>
-              <p>
-                Les MNBC peuvent diminuer le nombre de prêts des banques, donc ralentir en quelque sorte l'activité économique.
-              </p>
-              <p>
-                Aussi, il y a la question de la surveillance (qui en réalité est déjà en place)
-              </p>
-            </div>
-          </div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  {actor.content}
+                </p>
+              </div>
 
-          <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-            <h3 className="mb-4 text-indigo-700">Society 5.0: A People-centric Super-smart Society</h3>
-            <div className="space-y-4 text-foreground/80">
-              <p>
-                Une option de société sans cash? Disparition de la monnaie. Les indicateurs ne sont plus en PIB/par hab mais en qualité de vie.
-              </p>
-              <p>
-                Plus d'échanges de monnaie comme valeur étalon, partage des ressources → société post capitaliste
-              </p>
-              <p>
-                La propriété individuelle ne serait pas le marqueur de développement le plus important
-              </p>
+              {/* Card Footer */}
+              <div className="px-5 py-3 bg-gray-50 border-t border-gray-100 mt-auto">
+                <p className="text-xs text-gray-500 italic">
+                  <span className="font-semibold not-italic text-gray-400 uppercase tracking-wider text-[10px]">
+                    Source:{" "}
+                  </span>
+                  {actor.source}
+                </p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
     </div>
