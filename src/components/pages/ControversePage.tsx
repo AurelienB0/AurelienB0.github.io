@@ -1,6 +1,7 @@
 import React from "react";
 import arg from "../../styles/btc.jpg";
 import btc from "../../styles/argent.png";
+import { SourceLinks } from "./ExpertPage";
 export function ControversePage() {
   return (
     <div className="space-y-20">
@@ -59,7 +60,9 @@ export function ControversePage() {
             <img src={btc} />
             {/* https://theconversation.com/le-cash-recule-mais-reste-solidement-ancre-dans-les-portefeuilles-des-francais-268917 */}
           </div>
-
+          <div style={{ alignSelf: "flex-end", right: 10, marginLeft: 600 }}>
+            <SourceLinks sources="Figure 1" />
+          </div>
           <p>
             Des événements marquants ont renforcé cette dynamique. En 2008, la
             création du Bitcoin a introduit l’idée d’une monnaie entièrement
@@ -184,6 +187,9 @@ export function ControversePage() {
           <div className="my-8 flex justify-center">
             <img src={arg} />
             {/* https://www.jbs.cam.ac.uk/2022/a-deep-dive-into-bitcoins-environmental-impact/ */}
+          </div>
+          <div style={{ marginLeft: 700 }}>
+            <SourceLinks sources="Figure 2" />
           </div>
 
           <p>

@@ -166,7 +166,7 @@ const getSentimentColor = (sentiment: string) => {
   }
 };
 
-const SourceLinks = ({ sources }: { sources: string }) => {
+export const SourceLinks = ({ sources }: { sources: string }) => {
   const names = sources.split(",").map((s) => s.trim());
   return (
     <>
