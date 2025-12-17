@@ -23,8 +23,8 @@ export function SourcesPage() {
     "Society 5.0: A People-Centric Super-Smart Society. Hitachi-UTokyo Laboratory (H-UTokyo Lab.). Springer Singapore, 2020. https://doi.org/10.1007/978-981-15-2989-4.",
     "Trabelsi, Donia, Michel Berne, et Sondes Mbarek. « Krach du bitcoin : cybercriminalité et surconsommation d'électricité, la face cachée des cryptomonnaies ». The Conversation, 20 mai 2021. https://doi.org/10.64628/AAK.7pwafk659.",
     "Maxime Duval. La Monnaie Publique à l'Ère Numérique : Une Analyse Institutionnaliste du Concept de Monnaie Numérique de Banque Centrale. Economies et finances. Université de Nanterre - Paris X, 2024. Français. https://theses.hal.science/tel-05062845/file/2024PA100069.pdf",
-    "Figure 1 . https://theconversation.com/le-cash-recule-mais-reste-solidement-ancre-dans-les-portefeuilles-des-francais-268917",
-    "Figure 2 . https://www.jbs.cam.ac.uk/2022/a-deep-dive-into-bitcoins-environmental-impact/",
+    "Figure1 . https://theconversation.com/le-cash-recule-mais-reste-solidement-ancre-dans-les-portefeuilles-des-francais-268917",
+    "Figure2 . https://www.jbs.cam.ac.uk/2022/a-deep-dive-into-bitcoins-environmental-impact/",
   ];
 
   const teamMembers = [

@@ -61,7 +61,7 @@ export function ControversePage() {
             {/* https://theconversation.com/le-cash-recule-mais-reste-solidement-ancre-dans-les-portefeuilles-des-francais-268917 */}
           </div>
           <div style={{ alignSelf: "flex-end", right: 10, marginLeft: 600 }}>
-            <SourceLinks sources="Figure 1" />
+            <SourceLinks sources="Figure1" />
           </div>
           <p>
             Des événements marquants ont renforcé cette dynamique. En 2008, la
@@ -189,7 +189,7 @@ export function ControversePage() {
             {/* https://www.jbs.cam.ac.uk/2022/a-deep-dive-into-bitcoins-environmental-impact/ */}
           </div>
           <div style={{ marginLeft: 700 }}>
-            <SourceLinks sources="Figure 2" />
+            <SourceLinks sources="Figure2" />
           </div>
 
           <p>
